@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VÓRTICE · Revista Digital</title>
+  <meta name="description" content="VÓRTICE · Revista digital cultural. Edición especial: Antofagasta, 10 de octubre 2025." />
+  <meta property="og:title" content="VÓRTICE · Revista Digital" />
+  <meta property="og:description" content="Edición especial · Cultura, música, poesía y artes escénicas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://placehold.co/1200x630/png" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0a;--fg:#f0f0f0;--muted:#cfcfcf;--gold:#d4af37;--accent:#c4262e;--card:#141414;--shadow:0 10px 30px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    img{max-width:100%;display:block}.container{max-width:1100px;margin-inline:auto;padding:0 1.2rem}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.75);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+    .brand{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.08em;text-decoration:none;color:var(--fg);font-size:1.15rem}
+    .nav-toggle{display:none;background:none;border:0;color:var(--fg);font-size:1.4rem}
+    .menu{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .menu a{color:var(--muted);text-decoration:none;padding:.6rem .5rem;border-radius:.4rem}
+    .menu a:hover,.menu a.is-active{color:var(--fg);background:rgba(255,255,255,.06)}
+    .hero{position:relative;min-height:72vh;display:grid;place-items:center;isolation:isolate}
+    .hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+    .hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.35) 0%, rgba(10,10,10,.8) 60%, var(--bg) 100%);z-index:-1}
+    .hero-content{text-align:center}
+    .hero h1{font-family:'Playfair Display',serif;font-weight:800;line-height:1.1;font-size:clamp(2.2rem,4vw + 1rem,4rem);text-shadow:0 8px 40px rgba(0,0,0,.55)}
+    .hero p{color:var(--muted);margin:.5rem 0 1.2rem}
+    .btn{display:inline-block;padding:.8rem 1.1rem;border:1px solid var(--gold);color:var(--fg);background:transparent;text-decoration:none;border-radius:.4rem;transition:.2s;cursor:pointer}
+    .btn:hover{background:var(--gold);color:#111}.btn-primary{border-color:var(--accent)}.btn-primary:hover{background:var(--accent)}
+    .section{padding:3.5rem 0}
+    .section-title{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.02em;margin:0 0 1rem;border-left:4px solid var(--gold);padding-left:.6rem}
+    .toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem}
+    .toc a{display:block;padding:.8rem 1rem;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:.5rem;color:var(--fg);text-decoration:none}
+    .toc a:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+    .longform{max-width:72ch;color:#eaeaea}.longform h3{font-family:'Playfair Display',serif}
+    .grid{display:grid;gap:1.2rem}.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:.8rem;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.03)}
+    .card-media img{aspect-ratio:16/9;object-fit:cover;transition:transform .4s ease}
+    .card:hover .card-media img{transform:scale(1.05)}.card-body{padding:1rem}.card-title{margin:.2rem 0 .4rem;font-size:1.1rem}
+    .card-title a{color:var(--fg);text-decoration:none}.card-excerpt{color:var(--muted)}
+    .program{display:grid;gap:1rem}.program-item{padding:1rem;border-left:3px solid var(--accent);background:linear-gradient(90deg, rgba(196,38,46,.08), transparent 30%)}
+    .mosaic{columns:3 300px;column-gap:1rem}.mosaic-item{display:inline-block;margin-bottom:1rem;border-radius:.6rem;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
+    .mosaic img{width:100%;height:auto;display:block;transition:transform .4s ease}.mosaic a:hover img{transform:scale(1.03)}
+    .site-footer{border-top:1px solid rgba(255,255,255,.08);padding:2.5rem 0;background:#0c0c0c;margin-top:2rem;position:relative}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem;align-items:start}
+    .contact-form{display:grid;gap:.6rem}
+    .contact-form input,.contact-form textarea{width:100%;padding:.75rem;border-radius:.4rem;border:1px solid rgba(255,255,255,.12);background:#121212;color:var(--fg)}
+    .form-note{color:var(--muted);font-size:.85rem}.legal{border-top:1px solid rgba(255,255,255,.08);padding-top:1rem;margin-top:1.5rem;color:var(--muted)}
+    .back-to-top{position:fixed;right:1rem;bottom:1rem;padding:.6rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:#121212;color:var(--fg);text-decoration:none;opacity:.85;display:none}
+    .back-to-top.is-visible{display:inline-block}
+    @media (max-width:800px){.menu{display:none;flex-direction:column;background:#0d0d0d;position:absolute;right:1rem;top:60px;padding:.6rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}.nav-toggle{display:inline-block}.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#portada" aria-label="Vórtice portada">VÓRTICE</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="#indice">Índice</a></li>
+        <li><a href="#editorial">Editorial</a></li>
+        <li><a href="#articulos">Artículos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="portada" class="hero" aria-label="Portada Vórtice">
+    <div class="hero-media" role="img" aria-label="Luces, escenario y público">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1400&auto=format&fit=crop" alt="" loading="eager" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Edición Especial · VÓRTICE</h1>
+      <p>Antofagasta · 10 de octubre 2025 · Música, poesía y escena.</p>
+      <a class="btn btn-primary" href="#indice">Explorar</a>
+    </div>
+  </section>
+
+  <section id="indice" class="section container">
+    <h2 class="section-title">Índice</h2>
+    <div class="toc">
+      <a href="#editorial">Carta del editor</a>
+      <a href="#articulos">Destacados</a>
+      <a href="#programa">Programa del concierto</a>
+      <a href="#entrevista">Entrevista</a>
+      <a href="#galeria">Galería visual</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </section>
+
+  <section id="editorial" class="section container">
+    <h2 class="section-title">Editorial</h2>
+    <article class="longform">
+      <p>Bienvenidos a <strong>VÓRTICE</strong>, una revista digital que celebra la convergencia entre música, palabra y escena. En esta edición especial, Antofagasta vibra con repertorios clásicos y contemporáneos, entrevistas íntimas y un registro visual que capta la energía del encuentro.</p>
+      <p>Este número se publica en paralelo a la jornada del <em>10 de octubre de 2025</em>, con artistas invitados y una curaduría que explora contrastes: silencio y estallido, técnica y emoción, memoria y presente.</p>
+    </article>
+  </section>
+
+  <section id="articulos" class="section container">
+    <h2 class="section-title">Artículos Destacados</h2>
+    <div class="grid cards">
+      <article class="card">
+        <a href="#entrevista" class="card-media">
+          <img src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=1200&auto=format&fit=crop" alt="Guitarra clásica sobre escenario" loading="lazy" />
+        </a>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#entrevista">“El sonido entre luces”: diálogo con el intérprete</a></h3>
+          <p class="card-excerpt">Una conversación sobre técnica, repertorio y la respiración del público.</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="#programa" class="card-media">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop" alt="Partitura y metrónomo" loading="lazy" />
+        </a>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#programa">Programa comentado</a></h3>
+          <p class="card-excerpt">Obras, autores y claves para disfrutar el concierto con otra capa de sentido.</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="#galeria" class="card-media">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop" alt="Luces escénicas" loading="lazy" />
+        </a>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#galeria">Galería: el pulso del escenario</a></h3>
+          <p class="card-excerpt">Una selección visual que condensa texturas, color y movimiento.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="programa" class="section container">
+    <h2 class="section-title">Programa del Concierto</h2>
+    <div class="program">
+      <article class="program-item">
+        <h3>Preludio &amp; Danza</h3>
+        <p>Obras de <em>Bach</em>, <em>Tárrega</em> y <em>Barrios</em>. Comentarios: historia, forma y escucha activa.</p>
+      </article>
+      <article class="program-item">
+        <h3>Intermedio Poético</h3>
+        <p>Lecturas seleccionadas de “Libertad” de <em>Anastomós</em>. Ritmo, imagen y respiración.</p>
+      </article>
+      <article class="program-item">
+        <h3>Suite de Cierre</h3>
+        <p>Recorrido contemporáneo con guiños a folclor y ciudad. Encore sorpresa.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="entrevista" class="section container">
+    <h2 class="section-title">Entrevista</h2>
+    <article class="longform">
+      <h3>“Tocar es conversar con el espacio”</h3>
+      <p>— Cuando el público contiene la respiración, la música cambia de densidad. Uno aprende a leer ese silencio.</p>
+      <p>— ¿Y la técnica? Es el mapa. Pero el viaje ocurre en escena.</p>
+    </article>
+  </section>
+
+  <section id="galeria" class="section container">
+    <h2 class="section-title">Galería Visual</h2>
+    <div class="mosaic">
+      <a href="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=2000&auto=format&fit=crop" class="mosaic-item" data-lightbox="gal">
+        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=800&auto=format&fit=crop" alt="Luces" loading="lazy" />
+      </a>
+      <a href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop" class="mosaic-item" data-lightbox="gal">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop" alt="Escenario" loading="lazy" />
+      </a>
+      <a href="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2000&auto=format&fit=crop" class="mosaic-item" data-lightbox="gal">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop" alt="Partituras" loading="lazy" />
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto" class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>VÓRTICE · Revista Digital</h4>
+      <p>Antofagasta, Chile · Edición 2025</p>
+    </div>
+    <form class="contact-form" id="contactForm" aria-label="Formulario de contacto">
+      <h5>Escríbenos</h5>
+      <label>Nombre<input type="text" name="nombre" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
+      <button type="submit" class="btn">Enviar</button>
+      <p class="form-note">*Para envío real: EmailJS o Google Apps Script.</p>
+    </form>
+  </div>
+  <div class="container legal"><small>© 2025 VÓRTICE. Hecho con HTML, CSS y JS.</small></div>
+  <a href="#top" class="back-to-top" aria-label="Volver arriba">↑</a>
+</footer>
+
+<script>
+  const navToggle=document.querySelector('.nav-toggle');const menu=document.getElementById('menu');
+  navToggle?.addEventListener('click',()=>{const open=navToggle.getAttribute('aria-expanded')==='true';navToggle.setAttribute('aria-expanded',String(!open));menu.style.display=open?'none':'flex';});
+  const links=[...document.querySelectorAll('.menu a')];const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{const idx=sections.indexOf(entry.target);if(idx>=0&&entry.isIntersecting){links.forEach(l=>l.classList.remove('is-active'));links[idx].classList.add('is-active');}});},{rootMargin:"-50% 0px -40% 0px",threshold:0.01});sections.forEach(sec=>observer.observe(sec));
+  const backToTop=document.querySelector('.back-to-top');const backObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{backToTop?.classList.toggle('is-visible',!e.isIntersecting);});},{threshold:0});backObs.observe(document.querySelector('#portada'));
+  document.getElementById('contactForm')?.addEventListener('submit',(e)=>{e.preventDefault();alert('¡Gracias! Tu mensaje ha sido recibido. (Activa EmailJS o Apps Script para envío real)');e.target.reset();});
+  document.addEventListener('click',(e)=>{const a=e.target.closest('a[data-lightbox]');if(!a)return;e.preventDefault();const src=a.getAttribute('href');const overlay=document.createElement('div');overlay.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.9);display:grid;place-items:center;z-index:9999";const img=document.createElement('img');img.src=src;img.alt=a.querySelector('img')?.alt||'';img.style.maxWidth='90vw';img.style.maxHeight='90vh';img.style.boxShadow='0 20px 60px rgba(0,0,0,.6)';overlay.appendChild(img);overlay.addEventListener('click',()=>document.body.removeChild(overlay));document.body.appendChild(overlay);});
+</script>
+</body>
+</html>
